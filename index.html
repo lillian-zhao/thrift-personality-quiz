@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What's Your Secondhand Shopper Type?</title>
+  <meta name="description" content="A fun personality quiz that matches you to your secondhand shopper type." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="blobs" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+
+  <main class="app" id="app">
+    <!-- ============ START SCREEN ============ -->
+    <section class="screen screen--start is-active" id="screen-start">
+      <div class="card card--hero">
+        <p class="eyebrow">👚 The Thrift Personality Quiz</p>
+        <h1 class="hero-title">What's your <span class="grad">secondhand<br />shopper type</span>?</h1>
+        <p class="hero-sub">
+          Answer 10 quick questions and we'll match you to one of 10 shopper
+          personalities — plus the perfect platform for the way <em>you</em> shop.
+        </p>
+        <button class="btn btn--primary" id="btn-start">Start the quiz →</button>
+        <p class="hero-foot">Takes about 2 minutes · Made for sharing</p>
+      </div>
+    </section>
+
+    <!-- ============ QUIZ SCREEN ============ -->
+    <section class="screen screen--quiz" id="screen-quiz">
+      <header class="quiz-top">
+        <div class="progress">
+          <div class="progress__bar" id="progress-bar"></div>
+        </div>
+        <div class="quiz-meta">
+          <span id="q-counter">Question 1 of 10</span>
+          <button class="link-btn" id="btn-restart-top">Restart</button>
+        </div>
+      </header>
+
+      <div class="card card--question" id="question-card">
+        <span class="q-tag" id="q-tag">✨ About you</span>
+        <h2 class="q-title" id="q-title"></h2>
+        <p class="q-note" id="q-note" hidden></p>
+        <div class="options" id="options"></div>
+      </div>
+
+      <div class="quiz-nav">
+        <button class="btn btn--ghost" id="btn-back">← Back</button>
+      </div>
+    </section>
+
+    <!-- ============ RESULT SCREEN ============ -->
+    <section class="screen screen--result" id="screen-result">
+      <div class="card card--result" id="result-card">
+        <p class="result-emoji" id="result-emoji">✨</p>
+        <p class="eyebrow">You are…</p>
+        <h1 class="result-alias" id="result-alias"></h1>
+        <p class="result-archetype" id="result-archetype"></p>
+        <p class="result-blurb" id="result-blurb"></p>
+
+        <div class="result-match" id="result-match">
+          <span class="result-match__label">Your platform match</span>
+          <span class="result-match__site" id="result-site"></span>
+        </div>
+
+        <div class="result-affirm" id="result-affirm"></div>
+
+        <div class="result-runners">
+          <p class="runners-label">You also lean toward…</p>
+          <div class="runners" id="runners"></div>
+        </div>
+
+        <div class="result-actions">
+          <button class="btn btn--primary" id="btn-share">Share my result</button>
+          <button class="btn btn--ghost" id="btn-restart">Retake quiz</button>
+        </div>
+        <p class="share-status" id="share-status" hidden></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    Thrift first — it's good for your closet and the planet. 🌍
+  </footer>
+
+  <script src="quiz-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
