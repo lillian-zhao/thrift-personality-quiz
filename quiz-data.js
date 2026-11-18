@@ -240,6 +240,61 @@ const QUESTIONS = [
       { text: "A sport — a little competition kicks off the weekend right.", points: { ebay: 2, beni: 1 } },
     ],
   },
+  {
+    id: "seller-trust",
+    theme: "fun",
+    title: "What makes you trust a seller you've never met?",
+    options: [
+      { text: "I trust the platform's authentication system.", points: { vestiaire: 1, realreal: 1 } },
+      { text: "A history of good reviews and ratings is enough for me.", points: { ebay: 2, poshmark: 1 } },
+      { text: "It doesn't matter much to me. Worst case, I contact the platform for a refund.", points: { thredup: 2, vinted: 1 } },
+      { text: "I care about proof of activity on the platform, whether that's reviews from other buyers or messages between me and the seller.", points: { fbmarketplace: 2, ebay: 1 } },
+    ],
+  },
+  {
+    id: "favorite-item",
+    theme: "fun",
+    title: "What describes your favorite closet item?",
+    options: [
+      { text: "A high quality piece from a renowned brand.", points: { vestiaire: 2, realreal: 1 } },
+      { text: "A rare vintage piece with a story, which nobody else owns.", points: { poshmark: 2 } },
+      { text: "This season's hottest piece, snagged before it sold out.", points: { depop: 2 } },
+      { text: "Something I've worn for years and gotten attached to.", points: { thredup: 2 } },
+    ],
+  },
+  {
+    id: "decisions",
+    theme: "fun",
+    title: "When forced to choose between multiple options, I am someone who…",
+    options: [
+      { text: "Takes time to thoroughly research the options to see which one best suits my needs. The worst thing is to buy something useless to me.", points: { beni: 2 } },
+      { text: "Goes off vibes! If I feel like it, I'll just get it. Life is too short to hesitate. I'll make do with whatever I get.", points: { depop: 2, grailed: 1 } },
+      { text: "Quickly skims the information on the options before making a choice.", points: { poshmark: 2, realreal: 1 } },
+      { text: "Flips a coin. NEVER make me choose between anything.", points: { thredup: 2, fbmarketplace: 1 } },
+    ],
+  },
+  {
+    id: "party",
+    theme: "fun",
+    title: "A friend invites you to a party where you barely know anyone. What are you most likely to do?",
+    options: [
+      { text: "I'm confident in this setting and who I am. I go around talking with others and leaving an impression.", points: { depop: 2 } },
+      { text: "I'm comfortable in this setting, but I'd rather stick to my own pace than start conversations with strangers.", points: { realreal: 2 } },
+      { text: "I stick with the people I know and talk with some of their mutuals.", points: { vinted: 2 } },
+      { text: "I look for people who might share similar interests to mine to talk to.", points: { grailed: 2 } },
+    ],
+  },
+  {
+    id: "flight",
+    theme: "fun",
+    title: "A few days before a group trip you planned starts, your flight is cancelled. You…",
+    options: [
+      { text: "Immediately compare every rebooking option and pick the best.", points: { beni: 2 } },
+      { text: "Check in with everyone and come up with a plan together.", points: { poshmark: 2 } },
+      { text: "Wait it out. You know there's a possibility prices may drop if you stay patient.", points: { fbmarketplace: 1, ebay: 1 } },
+      { text: "Just buy whatever flight is closest to the originally cancelled flight. Wasting precious energy trying to find better deals isn't worth the risk.", points: { vestiaire: 2 } },
+    ],
+  },
 ];
 
 /* ---- Precompute the maximum points each result type can earn ----
