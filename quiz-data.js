@@ -13,6 +13,8 @@ const RESULTS = {
   vinted: {
     alias: "The Mindful Minimalist",
     site: "Vinted",
+    coreValue: "intentional living",
+    url: "https://www.vinted.com/",
     archetype: "Eco-Conscious",
     emoji: "🌱",
     color: "#2e8b57",
@@ -24,6 +26,8 @@ const RESULTS = {
   grailed: {
     alias: "The Vintage Connoisseur",
     site: "Grailed",
+    coreValue: "originality",
+    url: "https://grailed.com/",
     archetype: "Vintage Curator",
     emoji: "🧥",
     color: "#6b4226",
@@ -35,6 +39,8 @@ const RESULTS = {
   vestiaire: {
     alias: "The Luxe Authenticator",
     site: "Vestiaire Collective",
+    coreValue: "craftsmanship",
+    url: "https://www.vestiairecollective.com/",
     archetype: "Perfection Seeking",
     emoji: "💎",
     color: "#1b1b3a",
@@ -46,6 +52,8 @@ const RESULTS = {
   realreal: {
     alias: "The Quality Curator",
     site: "The RealReal",
+    coreValue: "craftsmanship",
+    url: "https://www.therealreal.com/",
     archetype: "Perfection Seeking",
     emoji: "🏷️",
     color: "#8b0000",
@@ -57,6 +65,8 @@ const RESULTS = {
   thredup: {
     alias: "The Savvy Saver",
     site: "ThredUp",
+    coreValue: "a good deal",
+    url: "https://www.thredup.com/",
     archetype: "Bargain Hunter",
     emoji: "💸",
     color: "#f4a261",
@@ -68,6 +78,8 @@ const RESULTS = {
   depop: {
     alias: "The Trendsetter",
     site: "Depop",
+    coreValue: "self-expression",
+    url: "https://www.depop.com/",
     archetype: "Casual Curiosity",
     emoji: "✨",
     color: "#e63946",
@@ -79,6 +91,8 @@ const RESULTS = {
   ebay: {
     alias: "The Treasure Hunter",
     site: "eBay",
+    coreValue: "a good deal",
+    url: "https://www.ebay.com/",
     archetype: "Bargain Hunter",
     emoji: "🔎",
     color: "#457b9d",
@@ -90,6 +104,8 @@ const RESULTS = {
   beni: {
     alias: "The Precision Seeker",
     site: "Beni",
+    coreValue: "precision",
+    url: "https://www.beni.com/",
     archetype: "Perfection Seeking",
     emoji: "🎯",
     color: "#3a0ca3",
@@ -101,6 +117,8 @@ const RESULTS = {
   fbmarketplace: {
     alias: "The Local Hunter",
     site: "Facebook Marketplace",
+    coreValue: "convenience",
+    url: "https://www.facebook.com/marketplace/",
     archetype: "Bargain Hunter",
     emoji: "📍",
     color: "#1877f2",
@@ -112,6 +130,8 @@ const RESULTS = {
   poshmark: {
     alias: "The Social Stylist",
     site: "Poshmark",
+    coreValue: "community",
+    url: "https://poshmark.com/",
     archetype: "Casual Curiosity",
     emoji: "👗",
     color: "#a020f0",

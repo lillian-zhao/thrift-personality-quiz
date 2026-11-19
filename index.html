@@ -7,7 +7,7 @@
   <meta name="description" content="A fun personality quiz that matches you to your secondhand shopper type." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -21,7 +21,7 @@
     <!-- ============ START SCREEN ============ -->
     <section class="screen screen--start is-active" id="screen-start">
       <div class="card card--hero">
-        <p class="eyebrow">👚 The Thrift Personality Quiz</p>
+        <p class="eyebrow">The Thrift Personality Quiz</p>
         <h1 class="hero-title">What's your <span class="grad">secondhand<br />shopper type</span>?</h1>
         <p class="hero-sub">
           Answer 10 quick questions and we'll match you to one of 10 shopper
@@ -45,7 +45,7 @@
       </header>
 
       <div class="card card--question" id="question-card">
-        <span class="q-tag" id="q-tag">✨ About you</span>
+        <span class="q-tag" id="q-tag">About you</span>
         <h2 class="q-title" id="q-title"></h2>
         <p class="q-note" id="q-note" hidden></p>
         <div class="options" id="options"></div>
@@ -59,7 +59,7 @@
     <!-- ============ RESULT SCREEN ============ -->
     <section class="screen screen--result" id="screen-result">
       <div class="card card--result" id="result-card">
-        <p class="result-emoji" id="result-emoji">✨</p>
+        <p class="result-emoji" id="result-emoji"></p>
         <p class="eyebrow">You are…</p>
         <h1 class="result-alias" id="result-alias"></h1>
         <p class="result-archetype" id="result-archetype"></p>
@@ -77,9 +77,42 @@
           <div class="runners" id="runners"></div>
         </div>
 
-        <div class="result-actions">
-          <button class="btn btn--primary" id="btn-share">Share my result</button>
-          <button class="btn btn--ghost" id="btn-restart">Retake quiz</button>
+        <div class="result-actions result-actions--single">
+          <button class="btn btn--primary" id="btn-explore" aria-label="Explore more">Explore more →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA SCREEN ============ -->
+    <section class="screen screen--cta" id="screen-cta">
+      <div class="card card--cta" id="cta-card">
+        <div class="cta-head">
+          <p class="eyebrow">Next step</p>
+          <p class="cta-value" id="cta-value"></p>
+        </div>
+
+        <div class="cta-stat" aria-label="Climate impact stat">
+          <p class="cta-stat__big" id="cta-stat-big">Up to 42%</p>
+          <p class="cta-stat__text" id="cta-stat-text">lower climate impact per wear when you buy second-hand instead of new, and up to 53% less water stress.</p>
+          <p class="cta-stat__source" id="cta-stat-source">Source: Klooster et al., Journal of Circular Economy (life cycle assessment of t-shirts, dresses, trousers & sweaters).</p>
+        </div>
+
+        <label class="cta-check" for="cta-check">
+          <input id="cta-check" type="checkbox" aria-label="Check if you will shop secondhand first next time" />
+          <span>Next time I need something new, I'll check secondhand first.</span>
+        </label>
+
+        <div class="cta-action">
+          <a class="btn btn--primary cta-platform-btn" id="btn-platform" href="#" target="_blank" rel="noopener noreferrer" aria-label="Find your first 3 pieces on platform">Find your first 3 pieces on Vinted →</a>
+        </div>
+
+        <p class="cta-tip" aria-label="Search tip">Tip: search for a piece you've been hunting for</p>
+        <p class="cta-microcopy">Pre-checked, photographed, and priced well below retail. Same style, better quality for your money.</p>
+        <p class="cta-success" id="cta-success" aria-live="polite" hidden>Nice. You're a thrifter now.</p>
+
+        <div class="result-actions cta-actions">
+          <button class="btn btn--ghost" id="btn-share-cta" aria-label="Share my result">Share my result</button>
+          <button class="btn btn--ghost" id="btn-restart-cta" aria-label="Retake quiz">Retake quiz</button>
         </div>
         <p class="share-status" id="share-status" hidden></p>
       </div>
