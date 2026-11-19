@@ -50,10 +50,27 @@ const AFFINITY_LABELS = {
       .trim();
   }
 
-  const state = {
-    index: 0,
-    answers: new Array(QUESTIONS.length).fill(null),
-  };
+  // Fisher-Yates shuffle (returns a new array)
+  function shuffle(list) {
+    const a = list.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  // A fresh run: questions in random order, each with its answers in random order.
+  // Option objects are reused, so scoring and selection checks still match.
+  function newRun() {
+    return {
+      index: 0,
+      questions: shuffle(QUESTIONS).map((q) => ({ ...q, options: shuffle(q.options) })),
+      answers: new Array(QUESTIONS.length).fill(null),
+    };
+  }
+
+  const state = newRun();
 
   const screens = {
     start: document.getElementById("screen-start"),
@@ -65,7 +82,6 @@ const AFFINITY_LABELS = {
   const el = {
     progressBar: document.getElementById("progress-bar"),
     counter: document.getElementById("q-counter"),
-    tag: document.getElementById("q-tag"),
     title: document.getElementById("q-title"),
     note: document.getElementById("q-note"),
     options: document.getElementById("options"),
@@ -119,13 +135,11 @@ const AFFINITY_LABELS = {
   }
 
   function renderQuestion() {
-    const q = QUESTIONS[state.index];
-    const total = QUESTIONS.length;
+    const q = state.questions[state.index];
+    const total = state.questions.length;
 
     el.counter.textContent = `Question ${state.index + 1} of ${total}`;
     el.progressBar.style.width = `${(state.index / total) * 100}%`;
-    el.tag.textContent = q.theme === "sustainability" ? "Thrift talk" : "About you";
-    el.tag.dataset.theme = q.theme;
     el.title.textContent = q.title;
 
     if (q.note) {
@@ -159,7 +173,7 @@ const AFFINITY_LABELS = {
     if (btn) btn.classList.add("is-selected");
 
     setTimeout(() => {
-      if (state.index < QUESTIONS.length - 1) {
+      if (state.index < state.questions.length - 1) {
         state.index++;
         renderQuestion();
       } else {
@@ -380,8 +394,7 @@ const AFFINITY_LABELS = {
   }
 
   function restart() {
-    state.index = 0;
-    state.answers = new Array(QUESTIONS.length).fill(null);
+    Object.assign(state, newRun());
     lastResult = null;
     lastRanked = null;
     el.ctaCheck.checked = false;
@@ -396,8 +409,7 @@ const AFFINITY_LABELS = {
   });
   el.btnBack.addEventListener("click", back);
   document.getElementById("btn-restart-top").addEventListener("click", () => {
-    state.index = 0;
-    state.answers = new Array(QUESTIONS.length).fill(null);
+    Object.assign(state, newRun());
     lastResult = null;
     show("start");
   });

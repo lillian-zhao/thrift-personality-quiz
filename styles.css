@@ -263,21 +263,6 @@ input[type="checkbox"]:focus-visible,
 .quiz-card.pop { animation: pop 0.4s cubic-bezier(.2,.9,.3,1.2) both; }
 @keyframes pop { from { opacity: 0; transform: scale(0.98) translateY(8px); } to { opacity: 1; transform: none; } }
 
-.q-tag {
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0;
-  text-transform: none;
-  background: transparent;
-  border: 0;
-  padding: 0;
-  margin-bottom: 12px;
-  color: var(--ink-blue);
-}
-.q-tag[data-theme="sustainability"],
-.q-tag[data-theme="fun"] { background: transparent; }
-
 .q-title {
   font-family: var(--font-head);
   font-weight: 400;
