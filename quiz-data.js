@@ -8,135 +8,375 @@
    though the raw point opportunities differ slightly per type.
    ============================================================= */
 
-/* ---- The 10 result types (aliases for the sites) ---- */
+/* ---- The 10 result types (fruit + object aliases for the sites) ---- */
 const RESULTS = {
   vinted: {
-    alias: "The Mindful Minimalist",
+    alias: "The Blueberry Cagoule",
     site: "Vinted",
     coreValue: "intentional living",
     url: "https://www.vinted.com/",
     archetype: "Eco-Conscious",
-    emoji: "🌱",
-    color: "#2e8b57",
+    emoji: "🫐",
+    color: "#2e5a8b",
+    tags: ["intentional","steady","understated"],
+    aesthetic: "clean basics, soft layers, quiet everyday pieces you actually rewear.",
+    vibe: "low-drama and sure of yourself. you buy what fits your life, not the feed.",
+    quizSignal: "skips hype, trusts their own style, prefers fewer better things.",
+    heroImage: null,
+    logoImage: null,
     blurb:
-      "You know your own style and don't let trends or logos boss you around. You shop with intention — buying less, choosing well, and giving clothes a second life.",
+      "Quietly sure of yourself. You skip the hype, stick to what feels like you, and keep your closet (and life) unfussy.",
+    overview:
+      "You're intentional without being precious. You know your style, you buy when something actually fits your life, and you don't need a logo to feel put together. In work, friendships, and shopping, you prefer fewer, better choices — and you'd rather reuse something great than chase whatever's loudest right now.",
+    strengths:
+      "Self-aware, steady, and hard to pressure. You make calm decisions, stick with what works, and bring a low-drama energy that other people trust. You're good at editing — closets, plans, and noise.",
+    weaknesses:
+      "Your comfort zone can get too cozy. You may skip experiments that would stretch you, or dismiss trends so quickly you miss something you'd actually love. Sometimes \"keeping it simple\" becomes avoiding change.",
+    friendship:
+      "You're the reliable friend who shows up without the performance — texts back, remembers the small stuff, and prefers deep one-on-ones to crowded nights. People feel safe around you because you don't need them to be \"on.\"",
+    compatible: ["thredup", "beni"],
+    platformUnique:
+      "Vinted is peer-to-peer thrifting without the middleman markup — everyday closets, fair prices, and a no-pressure place to buy and sell what you actually wear.",
+    platformBullets: [
+      "buyer-to-seller marketplace with low fees",
+      "great for everyday clothes, not just designer",
+      "easy to list and declutter your own closet",
+      "strong community of real people selling real wardrobes",
+      "built for intentional, repeat thrifting",
+    ],
     affirmation:
       "Your instinct to keep it simple is quietly powerful: extending a garment's life by just nine months cuts its carbon, water and waste footprint by about 20–30%. Vinted was basically made for you.",
   },
   grailed: {
-    alias: "The Vintage Connoisseur",
+    alias: "The Blackberry Sneakers",
     site: "Grailed",
     coreValue: "originality",
     url: "https://grailed.com/",
     archetype: "Vintage Curator",
-    emoji: "🧥",
-    color: "#6b4226",
+    emoji: "🖤",
+    color: "#3d2a4a",
+    tags: ["collector","original","selective"],
+    aesthetic: "archival streetwear, rare sneakers, design-forward one-offs.",
+    vibe: "taste over trends. you want the piece with a story, not a billboard.",
+    quizSignal: "hunts unique finds, waits for the one-of-one, digs past the obvious.",
+    heroImage: null,
+    logoImage: null,
     blurb:
-      "Design over hype. You hunt for the unique, the rare, the one-of-one. A piece with a story beats a piece with a billboard every time.",
+      "Design over hype. You chase the rare, the archival, the piece with a story — never the billboard.",
+    overview:
+      "You have a collector's instinct. Whether it's clothes, music, or hobbies, you care about originality and provenance more than popularity. You'd rather wait for the one-of-one than settle for whatever everyone else is wearing this month — and that pickiness is part of your charm.",
+    strengths:
+      "Sharp eye, real patience, and taste that feels personal. You notice details other people skim past, and you're willing to dig for something with history. When you commit, it's because you mean it.",
+    weaknesses:
+      "You can get snobby about \"basic\" choices, or wait so long for the perfect find that you miss good-enough options. Sometimes the hunt becomes the point — even when you already have what you need.",
+    friendship:
+      "You're the friend who opens doors — a hidden spot, a deep-cut reference, a vintage tip nobody else would know. Your circle is selective, but once someone's in, you're fiercely loyal and always bringing something interesting to the table.",
+    compatible: ["ebay", "depop"],
+    platformUnique:
+      "Grailed is the go-to for menswear, streetwear, and archival fashion — a curated marketplace where rare finds and design history matter more than mass trends.",
+    platformBullets: [
+      "specialized in streetwear, designer, and vintage menswear",
+      "sellers who know their pieces and provenance",
+      "filters built for serious collectors",
+      "community that values originality over hype",
+      "strong market for archival and limited drops",
+    ],
     affirmation:
       "Curating vintage keeps genuinely great design in circulation instead of in a landfill. Grailed is your natural habitat for rare, archival finds.",
   },
   vestiaire: {
-    alias: "The Luxe Authenticator",
+    alias: "The Persimmon Ring",
     site: "Vestiaire Collective",
     coreValue: "craftsmanship",
     url: "https://www.vestiairecollective.com/",
     archetype: "Perfection Seeking",
-    emoji: "💎",
-    color: "#1b1b3a",
+    emoji: "💍",
+    color: "#c45c26",
+    tags: ["polished","elevated","discerning"],
+    aesthetic: "authenticated luxury, statement accessories, investment wardrobe staples.",
+    vibe: "put-together on purpose. quality and status matter — with proof.",
+    quizSignal: "cares about brand reputation, wants polish, invests in lasting pieces.",
+    heroImage: null,
+    logoImage: null,
     blurb:
-      "Status and quality matter, and you want proof. You invest in pieces that hold their value and signal that you have taste.",
+      "Polished and intentional. Status and quality matter — you want proof, and you invest in pieces that hold their own.",
+    overview:
+      "You like things that signal care — in how you dress, how you show up, and what you invest in. Quality and reputation matter to you, not just for flexing, but because you want your choices to last and look intentional. You're drawn to the elevated version of almost everything.",
+    strengths:
+      "High standards, polished presence, and a gift for making ordinary moments feel intentional. You notice craftsmanship, you plan ahead, and you rarely look like you rolled out of bed by accident.",
+    weaknesses:
+      "Image can weigh on you. You may compare yourself to others, overthink how you're being perceived, or hesitate until something feels \"impressive enough.\" Perfectionism can quietly steal the fun.",
+    friendship:
+      "You show care through thoughtful invites, good taste, and being the friend who makes plans feel special. You keep a curated circle and appreciate people who also put in effort — emotionally and aesthetically.",
+    compatible: ["realreal", "poshmark"],
+    platformUnique:
+      "Vestiaire Collective is the secondhand luxury marketplace that authenticates high-end pieces so you can shop status brands with more confidence.",
+    platformBullets: [
+      "authentication for designer and luxury items",
+      "global inventory of elevated pre-owned fashion",
+      "strong resale value for investment pieces",
+      "curated luxury experience beyond casual thrift",
+      "trusted by shoppers who want proof of quality",
+    ],
     affirmation:
       "Buying pre-owned luxury keeps high-value pieces circulating and out of waste streams — and they often hold resale value. Vestiaire Collective authenticates the real deal for you.",
   },
   realreal: {
-    alias: "The Quality Curator",
+    alias: "The Quince Watch",
     site: "The RealReal",
     coreValue: "craftsmanship",
     url: "https://www.therealreal.com/",
     archetype: "Perfection Seeking",
-    emoji: "🏷️",
-    color: "#8b0000",
+    emoji: "⌚",
+    color: "#8b6914",
+    tags: ["curated","timeless","exacting"],
+    aesthetic: "crafted luxury, classic silhouettes, brands you trust for longevity.",
+    vibe: "long-game energy. fewer impeccable things beat a closet of maybes.",
+    quizSignal: "trusts craftsmanship, researches before buying, avoids impulse.",
+    heroImage: null,
+    logoImage: null,
     blurb:
-      "You trust certain brands because you know their craftsmanship. You'd rather own a few impeccable things than a closet of maybes.",
+      "You trust craftsmanship. A few impeccable pieces beat a closet of maybes every time.",
+    overview:
+      "You're a long-game person. You'd rather own fewer things that last — clothes, habits, opinions — than constantly rotate through whatever's new. Brands and makers you trust matter because they've earned it. You're less about trends and more about timeless quality.",
+    strengths:
+      "Discerning, consistent, and quietly confident. You research before you commit, value longevity over novelty, and tend to give solid advice because you've thought it through.",
+    weaknesses:
+      "Caution can tip into delay. You might wait for the \"perfect\" option while good opportunities pass, or hold yourself (and others) to standards that feel a bit rigid in everyday life.",
+    friendship:
+      "You're the friend who remembers birthdays, gives advice that actually helps, and sticks around for the long haul. Not the loudest in the group chat — but often the one people trust most when it counts.",
+    compatible: ["vestiaire", "beni"],
+    platformUnique:
+      "The RealReal is consignment done carefully — authenticated luxury fashion and home goods, curated for shoppers who care about craftsmanship and lasting quality.",
+    platformBullets: [
+      "expert authentication and consignment model",
+      "curated selection of luxury brands",
+      "clothes, accessories, and home in one place",
+      "quality-first shopping for fewer, better pieces",
+      "trusted names with verified craftsmanship",
+    ],
     affirmation:
       "Choosing well-made pieces that last is one of the most sustainable habits there is. The RealReal curates and authenticates quality consignment just for curators like you.",
   },
   thredup: {
-    alias: "The Savvy Saver",
+    alias: "The Honeydew Crewneck",
     site: "ThredUp",
     coreValue: "a good deal",
     url: "https://www.thredup.com/",
     archetype: "Bargain Hunter",
-    emoji: "💸",
-    color: "#f4a261",
+    emoji: "🍈",
+    color: "#7cb342",
+    tags: ["practical","cozy","resourceful"],
+    aesthetic: "easy everyday wear, soft knits, haul-friendly closet fillers.",
+    vibe: "soft life, smart spends. style without the stress of overpaying.",
+    quizSignal: "loves a deal, shops in bulk, returns what doesn't work.",
+    heroImage: null,
+    logoImage: null,
     blurb:
-      "Great style shouldn't cost a month's rent. You love a haul, a deal, and the freedom to send back what isn't right.",
+      "Soft life, smart spends. You love a haul, a deal, and the freedom to send back what isn't right.",
+    overview:
+      "You're practical about pleasure. You want style and comfort without the stress of overpaying — and you're fine browsing a lot to get there. Hauls, returns, and \"good enough for now\" are part of how you move through the world: flexible, budget-aware, and unbothered by perfection.",
+    strengths:
+      "Adaptable, resourceful, and low-pressure. You know how to stretch a dollar, keep things light, and pivot when something doesn't work. People find you easy to be around because you don't overcomplicate.",
+    weaknesses:
+      "\"Just one more\" can become a pile. You may buy more than you need, lose track of what you already own, or default to comfort so hard that style becomes an afterthought.",
+    friendship:
+      "You're the cozy hang friend — couch, snacks, no dress code, no agenda. You make people feel at home, and you're usually the one who says \"we don't have to do anything fancy\" and means it.",
+    compatible: ["vinted", "fbmarketplace"],
+    platformUnique:
+      "ThredUp is thrift at scale — huge inventory, easy returns, and the kind of haul-friendly secondhand shopping that feels as simple as buying new.",
+    platformBullets: [
+      "massive selection across sizes and styles",
+      "easy returns if something isn't right",
+      "clean, retail-like shopping experience",
+      "great for budget-friendly everyday finds",
+      "effortless way to thrift in bulk",
+    ],
     affirmation:
       "Shopping secondhand first is the single easiest swap for your wallet AND the planet — the fashion industry produces around 10% of global carbon emissions. ThredUp makes big thrift hauls effortless.",
   },
   depop: {
-    alias: "The Trendsetter",
+    alias: "The Cherry Platform",
     site: "Depop",
     coreValue: "self-expression",
     url: "https://www.depop.com/",
     archetype: "Casual Curiosity",
-    emoji: "✨",
+    emoji: "🍒",
     color: "#e63946",
+    tags: ["expressive","curious","visual"],
+    aesthetic: "y2k, vintage mixes, mood-board looks, trend-led personal style.",
+    vibe: "your feed is your fitting room. you dress for the era you're in.",
+    quizSignal: "follows aesthetics, builds a mood first, shops for self-expression.",
+    heroImage: null,
+    logoImage: null,
     blurb:
-      "You follow trends that match your taste and love building a mood board before you buy. Your feed is your fitting room.",
+      "Your feed is your fitting room. You build a mood first, then chase the pieces that match your aesthetic.",
+    overview:
+      "You're expressive and visual. Mood boards, screenshots, and \"main character\" energy aren't a joke to you — they're how you figure out who you are. You like trying on identities through style, and you follow trends when they feel like an extension of your taste, not a costume.",
+    strengths:
+      "Creative, curious, and quick to turn inspiration into action. You notice aesthetics everywhere, you're open to reinvention, and you make ordinary days feel more intentional just by caring how they look and feel.",
+    weaknesses:
+      "Inspiration can outrun reality. You may buy for the vibe before the lifestyle, chase micro-trends too hard, or feel restless the moment something stops feeling \"new.\"",
+    friendship:
+      "You're the hype friend — outfit checks, \"you have to try this,\" and the group chat energy that turns a random night into a story. You celebrate people's eras and help them lean into who they're becoming.",
+    compatible: ["poshmark", "grailed"],
+    platformUnique:
+      "Depop is the social thrift app — part marketplace, part mood board — where sellers style their closets and shoppers hunt aesthetics as much as items.",
+    platformBullets: [
+      "social, visual shopping feed",
+      "strong for Y2K, vintage, and trend-led looks",
+      "buy directly from stylish individual sellers",
+      "great for building a personal aesthetic",
+      "community-driven discovery and inspiration",
+    ],
     affirmation:
       "Finding trendy looks secondhand means you can experiment with your style without feeding fast fashion's waste cycle. Depop is where your aesthetic lives.",
   },
   ebay: {
-    alias: "The Treasure Hunter",
+    alias: "The Mango Digicam",
     site: "eBay",
     coreValue: "a good deal",
     url: "https://www.ebay.com/",
     archetype: "Bargain Hunter",
-    emoji: "🔎",
-    color: "#457b9d",
+    emoji: "🥭",
+    color: "#e67e22",
+    tags: ["patient","collector","resourceful"],
+    aesthetic: "vintage, collectibles, watches, leather bags, rare one-offs.",
+    vibe: "uniquely you. you know what you want and you're ready to hunt for a steal.",
+    quizSignal: "hunts for a specific rare thing, loves a competition, digs through pages to find it.",
+    heroImage: "assets/mango-digicam.png",
+    logoImage: "assets/ebay-logo.png",
     blurb:
-      "Patience is your superpower. You wait for the right piece at the right price and the thrill of the hunt is half the fun.",
+      "Patient hunter. You wait for the right piece at the right price — the chase is half the fun.",
+    overview:
+      "You're strategic and curious. You don't mind waiting, researching, or comparing options until the timing feels right — whether that's a jacket, a flight, or a life decision. The thrill isn't just owning something; it's knowing you found it well.",
+    strengths:
+      "Patient, informed, and hard to rush. You play the long game, stay calm under FOMO, and often end up with better outcomes because you didn't grab the first shiny thing.",
+    weaknesses:
+      "Overthinking is your trap. You can research past the point of usefulness, talk yourself out of good options, or enjoy the chase so much that finishing feels strangely anticlimactic.",
+    friendship:
+      "You're the friend with the tip, the link, the workaround. People come to you when they want the real scoop — and you love being useful without making it a whole performance.",
+    compatible: ["grailed", "beni"],
+    platformUnique:
+      "eBay is the original online flea market: a global marketplace with international sellers and a huge range of things beyond clothing, including collectibles and just about anything else you can think of.",
+    platformBullets: [
+      "bargaining and haggling built in",
+      "the best prices go to shoppers who know how to search for exactly what they're looking for",
+      "international volume and scale",
+      "plenty of seller reviews",
+      "options for authenticating secondhand designer items",
+    ],
     affirmation:
       "Every secondhand treasure you win is one less new item manufactured. eBay's endless marketplace rewards your patience and your bargain radar.",
   },
   beni: {
-    alias: "The Precision Seeker",
+    alias: "The Yuzu Mirror",
     site: "Beni",
     coreValue: "precision",
     url: "https://www.beni.com/",
     archetype: "Perfection Seeking",
-    emoji: "🎯",
-    color: "#3a0ca3",
+    emoji: "🪞",
+    color: "#c9a227",
+    tags: ["precise","decisive","focused"],
+    aesthetic: "exact pieces, known silhouettes, quality over quantity every time.",
+    vibe: "no wandering. you search with purpose and buy when it's right.",
+    quizSignal: "knows the exact item, compares carefully, skips endless browsing.",
+    heroImage: null,
+    logoImage: null,
     blurb:
-      "You know exactly what you want, down to the specific piece. Then you find it at the best quality you can — no wandering required.",
+      "You know exactly what you want. No wandering — just the exact piece, at the best quality you can find.",
+    overview:
+      "You're decisive once you've decided. You don't browse for fun as much as you search with purpose — the exact item, the exact fit, the exact plan. Clarity is your comfort zone, and wasting time on maybes is your least favorite sport.",
+    strengths:
+      "Focused, efficient, and intentional. You cut through noise, avoid impulse buys, and usually end up with things you'll actually use. People trust your judgment because it's specific.",
+    weaknesses:
+      "Precision can become rigidity. If it isn't the exact thing, you might walk away empty-handed — or struggle when life asks you to improvise. Spontaneity isn't always your strong suit.",
+    friendship:
+      "You're the friend who plans ahead, communicates clearly, and doesn't leave people guessing. Your circle may be small, but it's high-trust — and you show up exactly when you say you will.",
+    compatible: ["ebay", "realreal"],
+    platformUnique:
+      "Beni is a secondhand search engine — it scans listings across platforms so you can find the exact piece you want without hopping between tabs.",
+    platformBullets: [
+      "searches multiple thrift sites at once",
+      "built for shoppers who know the exact item",
+      "saves time vs. browsing endless feeds",
+      "helps compare price and condition across sellers",
+      "precision shopping instead of endless scrolling",
+    ],
     affirmation:
       "Buying the exact thing you'll actually wear beats impulse buys that get worn once. Beni scans secondhand listings across the web to find your precise piece, pre-loved.",
   },
   fbmarketplace: {
-    alias: "The Local Hunter",
+    alias: "The Plum Thermos",
     site: "Facebook Marketplace",
     coreValue: "convenience",
     url: "https://www.facebook.com/marketplace/",
     archetype: "Bargain Hunter",
-    emoji: "📍",
-    color: "#1877f2",
+    emoji: "🫖",
+    color: "#6b3a6d",
+    tags: ["grounded","handy","local"],
+    aesthetic: "practical finds, try-on-today pieces, neighborhood thrift staples.",
+    vibe: "hands-on and unfussy. if you can take it home today, done.",
+    quizSignal: "prefers local pickup, tries before buying, decides in the moment.",
+    heroImage: null,
+    logoImage: null,
     blurb:
-      "Practical and hands-on. If you can try it on, haggle a little, and take it home today, that's the whole decision made.",
+      "Hands-on and practical. If you can try it on, haggle a little, and take it home today — done.",
+    overview:
+      "You're grounded in the real world. You like decisions you can touch — try it on, meet nearby, take it home today. Big online rabbit holes aren't your vibe; convenience, common sense, and \"does this work for my life right now?\" usually win.",
+    strengths:
+      "Resourceful, decisive in person, and refreshingly unfussy. You're good in the moment, great at negotiating practical tradeoffs, and rarely paralyzed by options.",
+    weaknesses:
+      "If something takes too much waiting or planning, you may skip it entirely — even when it'd be worth it. Impatience with process can mean missing slower, better finds.",
+    friendship:
+      "You're the neighborly friend: help with the move, share the tip, keep it real. No fluff, just care. People appreciate that you're present and useful without making friendship feel complicated.",
+    compatible: ["thredup", "vinted"],
+    platformUnique:
+      "Facebook Marketplace is thrifting in your neighborhood — local pickups, same-day decisions, and deals you can see (and try) before you commit.",
+    platformBullets: [
+      "local pickup with no shipping wait",
+      "try before you buy when meeting in person",
+      "room to negotiate face-to-face",
+      "keeps items circulating in your community",
+      "great for furniture, clothes, and random useful finds",
+    ],
     affirmation:
       "Buying local means no shipping footprint and keeping items in your own community. Facebook Marketplace is your neighborhood thrift pipeline.",
   },
   poshmark: {
-    alias: "The Social Stylist",
+    alias: "The Fig Purse",
     site: "Poshmark",
     coreValue: "community",
     url: "https://poshmark.com/",
     archetype: "Casual Curiosity",
-    emoji: "👗",
-    color: "#a020f0",
+    emoji: "👜",
+    color: "#8b5a2b",
+    tags: ["social","warm","connected"],
+    aesthetic: "styled closets, polished apparel, accessories discovered through people.",
+    vibe: "style is social. you shop through recommendations and shared taste.",
+    quizSignal: "follows people's taste, loves community picks, builds looks with others.",
+    heroImage: null,
+    logoImage: null,
     blurb:
-      "Style is social for you. You follow the people whose taste you love and build your look through community and recommendations.",
+      "Style is social for you. You build your look through people whose taste you love — recommendations, shares, community.",
+    overview:
+      "You're relational by nature. Taste isn't something you invent alone — you discover it through people, conversations, and shared inspiration. Whether it's outfits, restaurants, or weekend plans, you like knowing what others love and building your world through connection.",
+    strengths:
+      "Warm, plugged-in, and generous with attention. You're great at spotting what people need, sharing recommendations, and turning style (or almost anything) into a social experience.",
+    weaknesses:
+      "You can lean on other people's opinions before trusting your own. Sometimes the desire to belong — or to be \"in the know\" — can pull you away from what you actually want.",
+    friendship:
+      "You're the connector friend — group chats, introductions, \"you two would love each other.\" Friendship is your favorite accessory, and you make communities feel bigger and warmer just by being in them.",
+    compatible: ["depop", "vestiaire"],
+    platformUnique:
+      "Poshmark is social shopping for fashion — closets, shares, and a community that turns secondhand buying into something collaborative and shareable.",
+    platformBullets: [
+      "social sharing and closet following",
+      "strong community of fashion sellers",
+      "offers and bundles that make deals social",
+      "polished apparel and accessories focus",
+      "great for discovering style through people you trust",
+    ],
     affirmation:
       "Shopping from real people's closets turns sustainability into a social, sharable habit. Poshmark's community is made for stylists like you.",
   },

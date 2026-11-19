@@ -5,18 +5,49 @@
 const CTA_COPY = {
   valueLine: "Because you value {value}, your next move is simple.",
   statBig: "Up to 42%",
-  statText: "lower climate impact per wear when you buy second-hand instead of new, and up to 53% less water stress.",
-  statSource: "Source: Klooster et al., Journal of Circular Economy (life cycle assessment of t-shirts, dresses, trousers & sweaters).",
-  microcopy: "Pre-checked, photographed, and priced well below retail. Same style, better quality for your money.",
+  statText:
+    "lower climate impact per wear when you buy second-hand instead of new, and up to 53% less water stress.",
+  statSource:
+    "Source: Klooster et al., Journal of Circular Economy (life cycle assessment of t-shirts, dresses, trousers & sweaters).",
+  microcopy:
+    "Pre-checked, photographed, and priced well below retail. Same style, better quality for your money.",
   success: "Nice. You're a thrifter now.",
   checkboxLabel: "Next time I need something new, I'll check secondhand first.",
+};
+
+const AFFINITY_ORDER = [
+  "vinted",
+  "depop",
+  "ebay",
+  "fbmarketplace",
+  "poshmark",
+  "vestiaire",
+  "realreal",
+  "grailed",
+  "thredup",
+  "beni",
+];
+
+const AFFINITY_LABELS = {
+  vinted: "Vinted",
+  depop: "Depop",
+  ebay: "eBay",
+  fbmarketplace: "Facebook",
+  poshmark: "Poshmark",
+  vestiaire: "Vestiaire",
+  realreal: "RealReal",
+  grailed: "Grailed",
+  thredup: "ThredUp",
+  beni: "Beni",
 };
 
 (function () {
   const { RESULTS, QUESTIONS, scoreQuiz } = window.QUIZ;
 
   function stripEmoji(text) {
-    return text.replace(/\p{Extended_Pictographic}|\p{Emoji_Presentation}/gu, '').trim();
+    return String(text || "")
+      .replace(/\p{Extended_Pictographic}|\p{Emoji_Presentation}/gu, "")
+      .trim();
   }
 
   const state = {
@@ -24,13 +55,13 @@ const CTA_COPY = {
     answers: new Array(QUESTIONS.length).fill(null),
   };
 
-  // --- element refs ---
   const screens = {
     start: document.getElementById("screen-start"),
     quiz: document.getElementById("screen-quiz"),
     result: document.getElementById("screen-result"),
     cta: document.getElementById("screen-cta"),
   };
+
   const el = {
     progressBar: document.getElementById("progress-bar"),
     counter: document.getElementById("q-counter"),
@@ -41,16 +72,31 @@ const CTA_COPY = {
     questionCard: document.getElementById("question-card"),
     btnBack: document.getElementById("btn-back"),
     // result
-    resEmoji: document.getElementById("result-emoji"),
-    resAlias: document.getElementById("result-alias"),
-    resArchetype: document.getElementById("result-archetype"),
-    resBlurb: document.getElementById("result-blurb"),
-    resSite: document.getElementById("result-site"),
-    resAffirm: document.getElementById("result-affirm"),
-    runners: document.getElementById("runners"),
-    shareStatus: document.getElementById("share-status"),
     resultCard: document.getElementById("result-card"),
+    resultTags: document.getElementById("result-tags"),
+    resAlias: document.getElementById("result-alias"),
+    resSite: document.getElementById("result-site"),
+    resLogo: document.getElementById("result-logo"),
+    resMatchPct: document.getElementById("result-match-pct"),
+    resHeroImg: document.getElementById("result-hero-img"),
+    resHeroFallback: document.getElementById("result-hero-fallback"),
+    resAesthetic: document.getElementById("result-aesthetic"),
+    resVibe: document.getElementById("result-vibe"),
+    resQuizSignal: document.getElementById("result-quiz-signal"),
+    platformTitle: document.getElementById("platform-unique-title"),
+    platformIntro: document.getElementById("platform-unique-intro"),
+    platformList: document.getElementById("platform-unique-list"),
+    resOverview: document.getElementById("result-overview"),
+    resStrengths: document.getElementById("result-strengths"),
+    resWeaknesses: document.getElementById("result-weaknesses"),
+    resFriendship: document.getElementById("result-friendship"),
+    compat: document.getElementById("compat"),
+    runners: document.getElementById("runners"),
+    affinityChart: document.getElementById("affinity-chart"),
     btnExplore: document.getElementById("btn-explore"),
+    shareStatus: document.getElementById("share-status"),
+    stageBg: document.getElementById("stage-bg"),
+    app: document.getElementById("app"),
     // cta
     ctaValue: document.getElementById("cta-value"),
     ctaPlatformBtn: document.getElementById("btn-platform"),
@@ -62,26 +108,24 @@ const CTA_COPY = {
   };
 
   let lastResult = null;
+  let lastRanked = null;
 
-  // --- screen switching ---
   function show(name) {
     Object.values(screens).forEach((s) => s.classList.remove("is-active"));
     screens[name].classList.add("is-active");
+    el.app.classList.toggle("app--wide", name === "result");
+    if (el.stageBg) el.stageBg.style.opacity = name === "result" ? "0" : "1";
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  // --- render current question ---
   function renderQuestion() {
     const q = QUESTIONS[state.index];
     const total = QUESTIONS.length;
 
     el.counter.textContent = `Question ${state.index + 1} of ${total}`;
     el.progressBar.style.width = `${(state.index / total) * 100}%`;
-
-    el.tag.textContent =
-      q.theme === "sustainability" ? "Thrift talk" : "About you";
+    el.tag.textContent = q.theme === "sustainability" ? "Thrift talk" : "About you";
     el.tag.dataset.theme = q.theme;
-
     el.title.textContent = q.title;
 
     if (q.note) {
@@ -104,14 +148,11 @@ const CTA_COPY = {
     });
 
     el.btnBack.disabled = state.index === 0;
-
-    // retrigger entrance animation
     el.questionCard.classList.remove("pop");
     void el.questionCard.offsetWidth;
     el.questionCard.classList.add("pop");
   }
 
-  // --- handle answer ---
   function choose(opt, btn) {
     state.answers[state.index] = opt;
     [...el.options.children].forEach((c) => c.classList.remove("is-selected"));
@@ -159,39 +200,155 @@ const CTA_COPY = {
     el.ctaCheck.setAttribute("aria-label", CTA_COPY.checkboxLabel);
   }
 
-  // --- finish & show result ---
+  function renderAffinityChart(ranked, topKey) {
+    const size = 360;
+    const cx = size / 2;
+    const cy = size / 2;
+    const maxR = 110;
+    const n = AFFINITY_ORDER.length;
+    const ratios = Object.fromEntries(ranked.map((r) => [r.key, r.ratio]));
+
+    function point(i, r) {
+      const angle = -Math.PI / 2 + (i * 2 * Math.PI) / n;
+      return [cx + Math.cos(angle) * r, cy + Math.sin(angle) * r];
+    }
+
+    const rings = [0.25, 0.5, 0.75, 1]
+      .map((t) => {
+        const pts = AFFINITY_ORDER.map((_, i) => point(i, maxR * t).join(",")).join(" ");
+        return `<polygon points="${pts}" fill="none" stroke="#111" stroke-opacity="0.18" stroke-width="1" />`;
+      })
+      .join("");
+
+    const axes = AFFINITY_ORDER.map((_, i) => {
+      const [x, y] = point(i, maxR);
+      return `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#111" stroke-opacity="0.2" stroke-width="1" />`;
+    }).join("");
+
+    const shapePts = AFFINITY_ORDER.map((key, i) => {
+      const ratio = Math.max(0.08, Math.min(1, ratios[key] || 0));
+      return point(i, maxR * ratio).join(",");
+    }).join(" ");
+
+    const labels = AFFINITY_ORDER.map((key, i) => {
+      const [x, y] = point(i, maxR + 28);
+      const active = key === topKey;
+      return `<text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="middle" class="affinity-label${
+        active ? " is-active" : ""
+      }" data-key="${key}">${AFFINITY_LABELS[key]}</text>`;
+    }).join("");
+
+    el.affinityChart.innerHTML = `
+      <svg viewBox="0 0 ${size} ${size}" role="img" aria-label="Platform affinity chart">
+        ${rings}
+        ${axes}
+        <polygon points="${shapePts}" fill="rgba(54,103,240,0.28)" stroke="#3667f0" stroke-width="2.5" />
+        ${labels}
+      </svg>
+    `;
+
+    el.affinityChart.querySelectorAll(".affinity-label").forEach((node) => {
+      node.style.cursor = "pointer";
+      node.addEventListener("click", () => {
+        const key = node.getAttribute("data-key");
+        const rd = RESULTS[key];
+        if (!rd) return;
+        // soft compare: scroll unique section and flash platform name
+        el.platformTitle.textContent = `What makes ${rd.site} unique?`;
+        el.platformIntro.textContent = rd.platformUnique || "";
+        el.platformList.innerHTML = "";
+        (rd.platformBullets || []).forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          el.platformList.appendChild(li);
+        });
+        el.platformTitle.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    });
+  }
+
   function finish() {
     el.progressBar.style.width = "100%";
     const ranked = scoreQuiz(state.answers);
+    lastRanked = ranked;
     const top = ranked[0];
     const data = RESULTS[top.key];
     lastResult = data;
 
-    el.resEmoji.textContent = "";
-    el.resAlias.textContent = stripEmoji(data.alias);
-    el.resArchetype.textContent = data.archetype;
-    el.resBlurb.textContent = data.blurb;
-    el.resSite.textContent = data.site;
-    el.resAffirm.textContent = data.affirmation;
-    el.resultCard.style.setProperty("--accent", data.color);
+    el.resultTags.innerHTML = "";
+    (data.tags || []).forEach((tag) => {
+      const span = document.createElement("span");
+      span.textContent = tag;
+      el.resultTags.appendChild(span);
+    });
 
-    el.runners.innerHTML = "";
-    ranked.slice(1, 3).forEach((r) => {
-      const rd = RESULTS[r.key];
+    el.resAlias.innerHTML = `${stripEmoji(data.alias)}<span class="result-title__underscore">_</span>`;
+    el.resSite.textContent = data.site;
+    el.resMatchPct.textContent = `${Math.round((top.ratio || 0) * 100)}%`;
+
+    if (data.logoImage) {
+      el.resLogo.src = data.logoImage;
+      el.resLogo.alt = data.site;
+      el.resLogo.hidden = false;
+      el.resSite.hidden = true;
+    } else {
+      el.resLogo.hidden = true;
+      el.resSite.hidden = false;
+    }
+
+    if (data.heroImage) {
+      el.resHeroImg.src = data.heroImage;
+      el.resHeroImg.alt = data.alias;
+      el.resHeroImg.hidden = false;
+      el.resHeroFallback.hidden = true;
+    } else {
+      el.resHeroImg.hidden = true;
+      el.resHeroFallback.hidden = false;
+      el.resHeroFallback.textContent = data.emoji || "✨";
+    }
+
+    el.resAesthetic.textContent = data.aesthetic || "";
+    el.resVibe.textContent = data.vibe || "";
+    el.resQuizSignal.textContent = data.quizSignal || "";
+    el.platformTitle.textContent = `What makes ${data.site} unique?`;
+    el.platformIntro.textContent = data.platformUnique || "";
+    el.platformList.innerHTML = "";
+    (data.platformBullets || []).forEach((item) => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      el.platformList.appendChild(li);
+    });
+
+    el.resOverview.textContent = data.overview || "";
+    el.resStrengths.textContent = data.strengths || "";
+    el.resWeaknesses.textContent = data.weaknesses || "";
+    el.resFriendship.textContent = data.friendship || "";
+
+    function fillChip(container, rd) {
       const chip = document.createElement("div");
       chip.className = "runner";
       chip.innerHTML = `<span class="runner__emoji"></span>
         <span class="runner__text"><strong></strong><small></small></span>`;
-      chip.querySelector(".runner__emoji").textContent = rd.emoji;
+      chip.querySelector(".runner__emoji").textContent = rd.emoji || "";
       chip.querySelector("strong").textContent = rd.alias;
       chip.querySelector("small").textContent = rd.site;
-      el.runners.appendChild(chip);
+      container.appendChild(chip);
+    }
+
+    el.compat.innerHTML = "";
+    (data.compatible || []).forEach((key) => {
+      if (RESULTS[key]) fillChip(el.compat, RESULTS[key]);
     });
 
+    el.runners.innerHTML = "";
+    ranked.slice(1, 3).forEach((r) => {
+      fillChip(el.runners, RESULTS[r.key]);
+    });
+
+    renderAffinityChart(ranked, top.key);
     show("result");
   }
 
-  // --- share ---
   async function share() {
     if (!lastResult) return;
     const text = `I'm "${lastResult.alias}" ${lastResult.emoji} — my secondhand shopper type! My platform match is ${lastResult.site}. What's yours?`;
@@ -203,7 +360,7 @@ const CTA_COPY = {
         return;
       }
     } catch (e) {
-      /* user cancelled — fall through to copy */
+      /* cancelled */
     }
 
     try {
@@ -222,18 +379,17 @@ const CTA_COPY = {
     setTimeout(() => (target.hidden = true), 4000);
   }
 
-  // --- restart ---
   function restart() {
     state.index = 0;
     state.answers = new Array(QUESTIONS.length).fill(null);
     lastResult = null;
+    lastRanked = null;
     el.ctaCheck.checked = false;
     el.ctaSuccess.hidden = true;
     renderQuestion();
     show("quiz");
   }
 
-  // --- wire up ---
   document.getElementById("btn-start").addEventListener("click", () => {
     renderQuestion();
     show("quiz");

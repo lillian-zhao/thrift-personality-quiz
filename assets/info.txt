@@ -1,0 +1,2 @@
+﻿license: GPL
+link: https://www.fontspace.com/cs-asena-pixel-font-f160161

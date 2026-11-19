@@ -7,78 +7,162 @@
   <meta name="description" content="A fun personality quiz that matches you to your secondhand shopper type." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="blobs" aria-hidden="true">
-    <span class="blob blob-1"></span>
-    <span class="blob blob-2"></span>
-    <span class="blob blob-3"></span>
+  <div class="stage-bg" aria-hidden="true" id="stage-bg">
+    <img class="stage-bg__map" src="assets/bg-map.png" alt="" />
+    <img class="stage-bg__scribble stage-bg__scribble--tl" src="assets/bg-scribble.png" alt="" />
+    <img class="stage-bg__scribble stage-bg__scribble--br" src="assets/bg-scribble.png" alt="" />
   </div>
 
   <main class="app" id="app">
     <!-- ============ START SCREEN ============ -->
     <section class="screen screen--start is-active" id="screen-start">
-      <div class="card card--hero">
-        <p class="eyebrow">The Thrift Personality Quiz</p>
-        <h1 class="hero-title">What's your <span class="grad">secondhand<br />shopper type</span>?</h1>
-        <p class="hero-sub">
-          Answer 10 quick questions and we'll match you to one of 10 shopper
-          personalities — plus the perfect platform for the way <em>you</em> shop.
+      <div class="landing">
+        <p class="landing-kicker">the thrift personality quiz</p>
+        <h1 class="landing-title">What's your thrift type<span class="gold-underscore">_</span></h1>
+        <p class="landing-sub">
+          Answer 10 quick questions and we'll match you to a secondhand shopper
+          personality — plus the platform that fits the way <em>you</em> shop.
         </p>
-        <button class="btn btn--primary" id="btn-start">Start the quiz →</button>
-        <p class="hero-foot">Takes about 2 minutes · Made for sharing</p>
+        <button class="btn btn--ticket" id="btn-start" type="button">
+          <img class="btn--ticket__img" src="assets/take-me-ticket.png" alt="" />
+          <span class="btn--ticket__text">Start →</span>
+        </button>
+        <p class="landing-foot">Takes about 2 minutes · Made for sharing</p>
       </div>
     </section>
 
     <!-- ============ QUIZ SCREEN ============ -->
     <section class="screen screen--quiz" id="screen-quiz">
-      <header class="quiz-top">
-        <div class="progress">
-          <div class="progress__bar" id="progress-bar"></div>
-        </div>
-        <div class="quiz-meta">
-          <span id="q-counter">Question 1 of 10</span>
-          <button class="link-btn" id="btn-restart-top">Restart</button>
-        </div>
-      </header>
+      <div class="quiz-shell">
+        <header class="quiz-top">
+          <div class="progress">
+            <div class="progress__bar" id="progress-bar"></div>
+          </div>
+          <div class="quiz-meta">
+            <span id="q-counter">Question 1 of 10</span>
+            <button class="link-btn" id="btn-restart-top">Restart</button>
+          </div>
+        </header>
 
-      <div class="card card--question" id="question-card">
-        <span class="q-tag" id="q-tag">About you</span>
-        <h2 class="q-title" id="q-title"></h2>
-        <p class="q-note" id="q-note" hidden></p>
-        <div class="options" id="options"></div>
-      </div>
+        <div class="quiz-card" id="question-card">
+          <span class="q-tag" id="q-tag">About you</span>
+          <h2 class="q-title" id="q-title"></h2>
+          <p class="q-note" id="q-note" hidden></p>
+          <div class="options" id="options"></div>
+        </div>
 
-      <div class="quiz-nav">
-        <button class="btn btn--ghost" id="btn-back">← Back</button>
+        <div class="quiz-nav">
+          <button class="btn btn--ghost" id="btn-back">← Back</button>
+        </div>
       </div>
     </section>
 
     <!-- ============ RESULT SCREEN ============ -->
     <section class="screen screen--result" id="screen-result">
-      <div class="card card--result" id="result-card">
-        <p class="result-emoji" id="result-emoji"></p>
-        <p class="eyebrow">You are…</p>
-        <h1 class="result-alias" id="result-alias"></h1>
-        <p class="result-archetype" id="result-archetype"></p>
-        <p class="result-blurb" id="result-blurb"></p>
-
-        <div class="result-match" id="result-match">
-          <span class="result-match__label">Your platform match</span>
-          <span class="result-match__site" id="result-site"></span>
+      <div class="result-page" id="result-card">
+        <div class="result-page__bg" aria-hidden="true">
+          <img class="result-page__map" src="assets/bg-map.png" alt="" />
+          <img class="result-page__scribble result-page__scribble--tl" src="assets/bg-scribble.png" alt="" />
+          <img class="result-page__scribble result-page__scribble--br" src="assets/bg-scribble.png" alt="" />
         </div>
 
-        <div class="result-affirm" id="result-affirm"></div>
+        <div class="result-tags" id="result-tags"></div>
 
-        <div class="result-runners">
-          <p class="runners-label">You also lean toward…</p>
-          <div class="runners" id="runners"></div>
+        <div class="result-top">
+          <div class="result-top__main">
+            <h1 class="result-title" id="result-alias"></h1>
+            <div class="result-platform-row">
+              <span class="result-platform-row__label">platform match:</span>
+              <img class="result-platform-row__logo" id="result-logo" alt="" hidden />
+              <span class="result-platform-row__site" id="result-site"></span>
+            </div>
+          </div>
+          <div class="result-top__aside">
+            <div class="result-match-pct">
+              <span class="result-match-pct__num" id="result-match-pct">0%</span>
+              <span class="result-match-pct__label">match</span>
+            </div>
+            <div class="result-signals">
+              <div class="signal">
+                <div class="signal__label"><span>(1)</span><span>aesthetic</span></div>
+                <p id="result-aesthetic"></p>
+              </div>
+              <div class="signal">
+                <div class="signal__label"><span>(2)</span><span>vibe</span></div>
+                <p id="result-vibe"></p>
+              </div>
+              <div class="signal">
+                <div class="signal__label"><span>(3)</span><span>quiz signal</span></div>
+                <p id="result-quiz-signal"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="result-actions result-actions--single">
-          <button class="btn btn--primary" id="btn-explore" aria-label="Explore more">Explore more →</button>
+        <div class="result-grid">
+          <div class="result-col result-col--left">
+            <div class="result-hero" id="result-hero">
+              <img id="result-hero-img" alt="" hidden />
+              <span class="result-hero__fallback" id="result-hero-fallback"></span>
+            </div>
+
+            <div class="result-unique">
+              <div class="signal__label"><span>(4)</span><span id="platform-unique-title">What makes this unique?</span></div>
+              <p id="platform-unique-intro"></p>
+              <ul id="platform-unique-list"></ul>
+            </div>
+          </div>
+
+          <div class="result-col result-col--right">
+            <div class="result-affinity">
+              <p class="signal__label">you also lean towards</p>
+              <p class="result-affinity__hint">tap a platform to see how it compares</p>
+              <div class="affinity-chart" id="affinity-chart" aria-label="Affinity chart across platforms"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-profile" id="result-profile">
+          <div class="profile-block">
+            <h3 class="profile-label">Overview</h3>
+            <p id="result-overview"></p>
+          </div>
+          <div class="profile-block">
+            <h3 class="profile-label">Strengths</h3>
+            <p id="result-strengths"></p>
+          </div>
+          <div class="profile-block">
+            <h3 class="profile-label">Weaknesses</h3>
+            <p id="result-weaknesses"></p>
+          </div>
+          <div class="profile-block">
+            <h3 class="profile-label">In friendship</h3>
+            <p id="result-friendship"></p>
+          </div>
+        </div>
+
+        <div class="result-centered">
+          <div class="result-compat">
+            <p class="signal__label">most compatible with</p>
+            <div class="runners" id="compat"></div>
+          </div>
+
+          <div class="result-runners">
+            <p class="signal__label">you also fit</p>
+            <div class="runners" id="runners"></div>
+          </div>
+
+          <div class="result-footer">
+            <p class="result-footer__label">Explore your community:</p>
+            <button class="take-me" id="btn-explore" type="button" aria-label="Take me to explore more">
+              <img class="take-me__ticket" src="assets/take-me-ticket.png" alt="" />
+              <span class="take-me__text">Take Me</span>
+            </button>
+          </div>
         </div>
       </div>
     </section>
