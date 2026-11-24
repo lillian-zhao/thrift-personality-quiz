@@ -28,6 +28,13 @@ const AFFINITY_ORDER = [
   "beni",
 ];
 
+// Spoke length (0–1) for a platform's ratio (raw ÷ max). `top` is the person's
+// highest ratio. The top spoke lands on √top and every other spoke is scaled by
+// the same divisor, so the chart fills out without distorting the proportions.
+function affinityRadius(ratio, top) {
+  return top ? ratio / Math.sqrt(top) : 0;
+}
+
 const AFFINITY_LABELS = {
   vinted: "Vinted",
   depop: "Depop",
@@ -221,6 +228,7 @@ const AFFINITY_LABELS = {
     const maxR = 110;
     const n = AFFINITY_ORDER.length;
     const ratios = Object.fromEntries(ranked.map((r) => [r.key, r.ratio]));
+    const topRatio = Math.max(...ranked.map((r) => r.ratio));
 
     function point(i, r) {
       const angle = -Math.PI / 2 + (i * 2 * Math.PI) / n;
@@ -240,7 +248,7 @@ const AFFINITY_LABELS = {
     }).join("");
 
     const shapePts = AFFINITY_ORDER.map((key, i) => {
-      const ratio = Math.max(0.08, Math.min(1, ratios[key] || 0));
+      const ratio = Math.max(0.08, Math.min(1, affinityRadius(ratios[key] || 0, topRatio)));
       return point(i, maxR * ratio).join(",");
     }).join(" ");
 
