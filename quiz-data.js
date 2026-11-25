@@ -11,15 +11,15 @@
 /* ---- The 10 result types (fruit + object aliases for the sites) ---- */
 const RESULTS = {
   vinted: {
-    alias: "The Blueberry Cagoule",
+    alias: "The Blueberry Bomber",
     site: "Vinted",
-    coreValue: "intentional living",
+    coreValue: "intentional",
     url: "https://www.vinted.com/",
-    archetype: "Eco-Conscious",
+    archetype: "Trendsetter",
     emoji: "🫐",
     color: "#2e5a8b",
     tags: ["intentional","steady","understated"],
-    aesthetic: "clean basics, soft layers, quiet everyday pieces you actually rewear.",
+    aesthetic: "clean basics, thoughtful layers, quiet everyday pieces you actually rewear.",
     vibe: "low-drama and sure of yourself. you buy what fits your life, not the feed.",
     quizSignal: "skips hype, trusts their own style, prefers fewer better things.",
     heroImage: null,
@@ -27,9 +27,9 @@ const RESULTS = {
     blurb:
       "Quietly sure of yourself. You skip the hype, stick to what feels like you, and keep your closet (and life) unfussy.",
     overview:
-      "You're intentional without being precious. You know your style, you buy when something actually fits your life, and you don't need a logo to feel put together. In work, friendships, and shopping, you prefer fewer, better choices — and you'd rather reuse something great than chase whatever's loudest right now.",
+      "You're intentional without being precious. You know your style, you buy when something actually fits your life, and you don't need a logo to feel put together. In work, friendships, and shopping, you prefer fewer, better choices; you'd rather reuse something great than chase whatever's loudest right now.",
     strengths:
-      "Self-aware, steady, and hard to pressure. You make calm decisions, stick with what works, and bring a low-drama energy that other people trust. You're good at editing — closets, plans, and noise.",
+      "Self-aware, steady, and hard to pressure. You make calm decisions, stick with what works, and bring a low-drama energy that other people trust. You're good at editing: closets, plans, and noise.",
     weaknesses:
       "Your comfort zone can get too cozy. You may skip experiments that would stretch you, or dismiss trends so quickly you miss something you'd actually love. Sometimes \"keeping it simple\" becomes avoiding change.",
     friendship:
@@ -52,17 +52,17 @@ const RESULTS = {
     site: "Grailed",
     coreValue: "originality",
     url: "https://grailed.com/",
-    archetype: "Vintage Curator",
+    archetype: "Perfection Seeking",
     emoji: "🖤",
     color: "#3d2a4a",
-    tags: ["collector","original","selective"],
+    tags: ["collector","original","elevated"],
     aesthetic: "archival streetwear, rare sneakers, design-forward one-offs.",
-    vibe: "taste over trends. you want the piece with a story, not a billboard.",
+    vibe: "taste over trends. you want the piece with a story, and you know which designers represent you best.",
     quizSignal: "hunts unique finds, waits for the one-of-one, digs past the obvious.",
     heroImage: null,
     logoImage: null,
     blurb:
-      "Design over hype. You chase the rare, the archival, the piece with a story — never the billboard.",
+      "Design comes first. You chase the rare, the archival, the piece with a story. If you know, you know.",
     overview:
       "You have a collector's instinct. Whether it's clothes, music, or hobbies, you care about originality and provenance more than popularity. You'd rather wait for the one-of-one than settle for whatever everyone else is wearing this month — and that pickiness is part of your charm.",
     strengths:
@@ -71,7 +71,7 @@ const RESULTS = {
       "You can get snobby about \"basic\" choices, or wait so long for the perfect find that you miss good-enough options. Sometimes the hunt becomes the point — even when you already have what you need.",
     friendship:
       "You're the friend who opens doors — a hidden spot, a deep-cut reference, a vintage tip nobody else would know. Your circle is selective, but once someone's in, you're fiercely loyal and always bringing something interesting to the table.",
-    compatible: ["ebay", "depop"],
+    compatible: ["therealreal", "depop"],
     platformUnique:
       "Grailed is the go-to for menswear, streetwear, and archival fashion — a curated marketplace where rare finds and design history matter more than mass trends.",
     platformBullets: [
@@ -79,7 +79,7 @@ const RESULTS = {
       "sellers who know their pieces and provenance",
       "filters built for serious collectors",
       "community that values originality over hype",
-      "strong market for archival and limited drops",
+      "strong bidding market for archival and limited drops",
     ],
     affirmation:
       "Curating vintage keeps genuinely great design in circulation instead of in a landfill. Grailed is your natural habitat for rare, archival finds.",
@@ -113,7 +113,7 @@ const RESULTS = {
       "Vestiaire Collective is the secondhand luxury marketplace that authenticates high-end pieces so you can shop status brands with more confidence.",
     platformBullets: [
       "authentication for designer and luxury items",
-      "global inventory of elevated pre-owned fashion",
+      "global inventory of elevated pre-owned fashion, strong European seller community",
       "strong resale value for investment pieces",
       "curated luxury experience beyond casual thrift",
       "trusted by shoppers who want proof of quality",
@@ -200,7 +200,7 @@ const RESULTS = {
     site: "Depop",
     coreValue: "self-expression",
     url: "https://www.depop.com/",
-    archetype: "Casual Curiosity",
+    archetype: "Trendsetter",
     emoji: "🍒",
     color: "#e63946",
     tags: ["expressive","curious","visual"],
@@ -212,7 +212,7 @@ const RESULTS = {
     blurb:
       "Your feed is your fitting room. You build a mood first, then chase the pieces that match your aesthetic.",
     overview:
-      "You're expressive and visual. Mood boards, screenshots, and \"main character\" energy aren't a joke to you — they're how you figure out who you are. You like trying on identities through style, and you follow trends when they feel like an extension of your taste, not a costume.",
+      "You're expressive and visual. Mood boards, screenshots, and setting the \"trend\" aren't a joke to you — they're how you figure out who you are. You like trying on identities through style, and you follow trends when they feel like an extension of your taste, not a costume.",
     strengths:
       "Creative, curious, and quick to turn inspiration into action. You notice aesthetics everywhere, you're open to reinvention, and you make ordinary days feel more intentional just by caring how they look and feel.",
     weaknesses:
@@ -243,7 +243,7 @@ const RESULTS = {
     tags: ["patient","collector","resourceful"],
     aesthetic: "vintage, collectibles, watches, leather bags, rare one-offs.",
     vibe: "uniquely you. you know what you want and you're ready to hunt for a steal.",
-    quizSignal: "hunts for a specific rare thing, loves a competition, digs through pages to find it.",
+    quizSignal: "hunts for a specific rare thing, loves a competition, not afraid of a chase to find it.",
     heroImage: "assets/mango-digicam.png",
     logoImage: "assets/ebay-logo.png",
     blurb:
@@ -274,7 +274,7 @@ const RESULTS = {
     site: "Beni",
     coreValue: "precision",
     url: "https://www.beni.com/",
-    archetype: "Perfection Seeking",
+    archetype: "Trendsetter",
     emoji: "🪞",
     color: "#c9a227",
     tags: ["precise","decisive","focused"],
@@ -348,7 +348,7 @@ const RESULTS = {
     site: "Poshmark",
     coreValue: "community",
     url: "https://poshmark.com/",
-    archetype: "Casual Curiosity",
+    archetype: "Trendsetter",
     emoji: "👜",
     color: "#8b5a2b",
     tags: ["social","warm","connected"],
@@ -372,31 +372,43 @@ const RESULTS = {
       "Poshmark is social shopping for fashion — closets, shares, and a community that turns secondhand buying into something collaborative and shareable.",
     platformBullets: [
       "social sharing and closet following",
-      "strong community of fashion sellers",
+      "strong community of smaller fashion sellers",
       "offers and bundles that make deals social",
-      "polished apparel and accessories focus",
+      "y2k apparel and accessories focus",
       "great for discovering style through people you trust",
     ],
     affirmation:
       "Shopping from real people's closets turns sustainability into a social, sharable habit. Poshmark's community is made for stylists like you.",
   },
 };
-
 /* ---- Questions ----
    Each option's `points` maps a result-key -> points awarded.
-   `sustainability` questions carry a pro-secondhand "did you know" note.
+   Sustainability questions carry a pro-secondhand "did you know" note.
    ---------------------------------------------------------------- */
+
 const QUESTIONS = [
   {
     id: "brand",
     theme: "sustainability",
     title: "How much do you consider Brand when shopping?",
-    note: "Did you know? Chasing new-season brand drops drives overproduction — an estimated 85% of textiles end up in landfills or incinerated each year.",
+    note: "Did you know? Chasing new-season brand drops drives overproduction. An estimated 85% of textiles end up in landfills or incinerated each year.",
     options: [
-      { text: "Not at all — the look and feel is all that matters to me.", points: { vinted: 2 } },
-      { text: "Not at all — design matters most. I value unique or vintage pieces.", points: { grailed: 2 } },
-      { text: "Quite a bit — the brand and status matter to me.", points: { vestiaire: 2 } },
-      { text: "Quite a bit — there are brands I trust to meet a certain quality.", points: { realreal: 2 } },
+      {
+        text: "Not at all — the look and feel is all that matters to me.",
+        points: { vinted: 2 },
+      },
+      {
+        text: "Not at all — design matters most. I value unique or vintage pieces.",
+        points: { ebay: 2, grailed: 1 },
+      },
+      {
+        text: "Quite a bit — the brand and status matter to me.",
+        points: { vestiaire: 2 },
+      },
+      {
+        text: "Quite a bit — there are brands I trust to meet a certain quality.",
+        points: { realreal: 2 },
+      },
     ],
   },
   {
@@ -404,10 +416,22 @@ const QUESTIONS = [
     theme: "fun",
     title: "When I buy clothes, I tend to…",
     options: [
-      { text: "Shop in bulk! I love hauls — and I return what's not right.", points: { thredup: 2, depop: 1 } },
-      { text: "Wait for the right piece to find me, at the right bargain.", points: { ebay: 2, grailed: 1 } },
-      { text: "Know what I want, then buy that exact piece at the best quality.", points: { beni: 2, ebay: 1 } },
-      { text: "Buy from a person nearby — try it on and take it home today.", points: { fbmarketplace: 2, vinted: 1 } },
+      {
+        text: "Shop in bulk! I love hauls — and I return what's not right.",
+        points: { thredup: 2, depop: 1 },
+      },
+      {
+        text: "Wait for the right piece to find me, at the right bargain.",
+        points: { ebay: 2, fbmarketplace: 1 },
+      },
+      {
+        text: "Know what I want, then buy that exact piece at the best quality.",
+        points: { beni: 2, ebay: 1 },
+      },
+      {
+        text: "Search for my favorite brands — I know what works best for me.",
+        points: { grailed: 2, vestiaire: 2 },
+      },
     ],
   },
   {
@@ -416,10 +440,22 @@ const QUESTIONS = [
     title: "How do you feel about following fashion trends?",
     note: "Did you know? The average fast-fashion micro-trend can come and go in weeks, but a thrifted piece you love can last for years.",
     options: [
-      { text: "I wouldn't follow an influencer just for style — I know my own.", points: { vinted: 2 } },
-      { text: "I shop practically and don't really engage with trends.", points: { fbmarketplace: 2 } },
-      { text: "I follow trends when they match my taste, especially from creators I like.", points: { depop: 2 } },
-      { text: "I follow trends closely — down to the exact piece that's popular.", points: { beni: 2 } },
+      {
+        text: "I wouldn't follow an influencer just for style — I know my own.",
+        points: { vinted: 2, beni: 1 },
+      },
+      {
+        text: "I shop practically and don't really engage with trends.",
+        points: { thredup: 2, fbmarketplace: 1 },
+      },
+      {
+        text: "I follow trends when they match my taste, especially from creators I like.",
+        points: { depop: 2, vestiaire: 1 },
+      },
+      {
+        text: "I follow trends closely — down to the exact piece that's popular.",
+        points: { grailed: 2 },
+      },
     ],
   },
   {
@@ -427,10 +463,22 @@ const QUESTIONS = [
     theme: "fun",
     title: "Which one looks most like you on an average morning?",
     options: [
-      { text: "I default to the style that makes me feel like me — I curate my outfit.", points: { depop: 2, poshmark: 1 } },
-      { text: "Up early, perfectly polished — not a hair out of place or a wrinkle in sight.", points: { vestiaire: 2, realreal: 2 } },
-      { text: "I roll out of bed and leave in sweats.", points: { thredup: 2, vinted: 1 } },
-      { text: "My accessories matter most — phone, headphones, a vintage watch.", points: { ebay: 2, fbmarketplace: 1 } },
+      {
+        text: "I default to the style that makes me feel like me — I curate my outfit.",
+        points: { depop: 2, poshmark: 1 },
+      },
+      {
+        text: "Up early, perfectly polished — not a hair out of place or a wrinkle in sight.",
+        points: { vestiaire: 2, realreal: 2 },
+      },
+      {
+        text: "I roll out of bed and leave in sweats.",
+        points: { thredup: 2, vinted: 1 },
+      },
+      {
+        text: "My accessories matter most — phone, headphones, a vintage watch.",
+        points: { ebay: 1, fbmarketplace: 1 },
+      },
     ],
   },
   {
@@ -439,10 +487,22 @@ const QUESTIONS = [
     title: "When I'm buying clothes, I think of price as…",
     note: "Did you know? Buying one secondhand item instead of new can save roughly 1 kg of CO₂ and hundreds of litres of water.",
     options: [
-      { text: "Number one. I want style, but no item is worth a month's rent.", points: { thredup: 2, vinted: 1 } },
-      { text: "A fun chase — getting a great deal is part of the thrill.", points: { ebay: 2, fbmarketplace: 1 } },
-      { text: "An indicator of quality — pricier means more authentic and rare.", points: { vestiaire: 2, realreal: 2 } },
-      { text: "Less important than the item. If I love it, price doesn't stop me.", points: { vinted: 2, grailed: 1 } },
+      {
+        text: "Number one. I want style, but no item is worth a month's rent.",
+        points: { thredup: 2, vinted: 1 },
+      },
+      {
+        text: "A fun chase — getting a great deal is part of the thrill.",
+        points: { ebay: 2, fbmarketplace: 2 },
+      },
+      {
+        text: "An indicator of quality — pricier means more authentic and rare.",
+        points: { vestiaire: 2, realreal: 2 },
+      },
+      {
+        text: "Less important than the item. If I love it, price doesn't stop me.",
+        points: { grailed: 2, depop: 1 },
+      },
     ],
   },
   {
@@ -450,10 +510,22 @@ const QUESTIONS = [
     theme: "fun",
     title: "I curate my taste through…",
     options: [
-      { text: "Pinterest — screenshots, boards, and building a mood before I buy.", points: { depop: 2, vestiaire: 1 } },
-      { text: "In-person shopping — I like to feel and try things on.", points: { fbmarketplace: 2, vinted: 1 } },
-      { text: "Influencers — I research their recommendations and tastes.", points: { poshmark: 2, realreal: 1 } },
-      { text: "Brands — they symbolize quality, style, and reputation to me.", points: { grailed: 2, ebay: 1 } },
+      {
+        text: "Pinterest — screenshots, boards, and building a mood before I buy.",
+        points: { depop: 2, vestiaire: 2 },
+      },
+      {
+        text: "In-person shopping — I like to feel and try things on.",
+        points: { fbmarketplace: 2, vinted: 1 },
+      },
+      {
+        text: "Influencers — I research their recommendations and tastes.",
+        points: { poshmark: 2, realreal: 1 },
+      },
+      {
+        text: "Brands — they symbolize quality, style, and reputation to me.",
+        points: { grailed: 2, beni: 1 },
+      },
     ],
   },
   {
@@ -461,10 +533,22 @@ const QUESTIONS = [
     theme: "fun",
     title: "You're at the boba shop. You order…",
     options: [
-      { text: "The same drink I always get — I stick to what I know.", points: { beni: 2, realreal: 1 } },
-      { text: "Something new every time — I want to try the whole menu.", points: { grailed: 2, depop: 1 } },
-      { text: "Whatever the staff or my friends recommend.", points: { poshmark: 2, realreal: 2 } },
-      { text: "Whatever's the best deal or biggest size for the price.", points: { thredup: 2, fbmarketplace: 1 } },
+      {
+        text: "The same drink I always get — I stick to what I know.",
+        points: { beni: 1, realreal: 1 },
+      },
+      {
+        text: "Something new every time — I want to try the whole menu.",
+        points: { vinted: 1, beni: 1 },
+      },
+      {
+        text: "Whatever the staff or my friends recommend.",
+        points: { poshmark: 2, depop: 2 },
+      },
+      {
+        text: "Whatever's the best deal or biggest size for the price.",
+        points: { thredup: 2, fbmarketplace: 1 },
+      },
     ],
   },
   {
@@ -472,10 +556,22 @@ const QUESTIONS = [
     theme: "fun",
     title: "A friend invites you to try something you've never done. You…",
     options: [
-      { text: "Decide once I get a clear idea of what to expect.", points: { ebay: 2, beni: 1 } },
-      { text: "Say yes instantly — I love new experiences.", points: { grailed: 2, depop: 1 } },
-      { text: "Go if I know most of the people going.", points: { poshmark: 2, vinted: 1 } },
-      { text: "Pass — I'm comfortable with my routines.", points: { thredup: 2, beni: 1 } },
+      {
+        text: "Decide once I get a clear idea of what to expect.",
+        points: { ebay: 2, beni: 2 },
+      },
+      {
+        text: "Say yes instantly — I love new experiences.",
+        points: { vinted: 2, depop: 1 },
+      },
+      {
+        text: "Go if I know most of the people going.",
+        points: { poshmark: 2, grailed: 1 },
+      },
+      {
+        text: "Pass — I'm comfortable with my routines.",
+        points: { thredup: 2, fbmarketplace: 1 },
+      },
     ],
   },
   {
@@ -483,10 +579,22 @@ const QUESTIONS = [
     theme: "fun",
     title: "I navigate relationships in a way where I…",
     options: [
-      { text: "Keep my network expansive — the more people, the better.", points: { ebay: 2, fbmarketplace: 1 } },
-      { text: "Pour into a few close bonds and keep them strong.", points: { vinted: 2, beni: 1 } },
-      { text: "Talk to anyone who talks to me first.", points: { fbmarketplace: 2, poshmark: 1 } },
-      { text: "Connect with people who elevate my position.", points: { vestiaire: 2, realreal: 2 } },
+      {
+        text: "Keep my network expansive — the more people, the better.",
+        points: { vinted: 2, poshmark: 1 },
+      },
+      {
+        text: "Pour into a few close bonds and keep them strong.",
+        points: { ebay: 2, fbmarketplace: 2 },
+      },
+      {
+        text: "Talk to anyone who talks to me first.",
+        points: { fbmarketplace: 2, beni: 1 },
+      },
+      {
+        text: "Connect with people who elevate my position.",
+        points: { vestiaire: 2, realreal: 2 },
+      },
     ],
   },
   {
@@ -494,21 +602,45 @@ const QUESTIONS = [
     theme: "fun",
     title: "It's Friday night. Your go-to is…",
     options: [
-      { text: "Staying in to unwind with a show.", points: { vinted: 2, thredup: 1 } },
-      { text: "A bar or a party, to meet new people.", points: { poshmark: 2, depop: 1 } },
-      { text: "Something artsy — a gallery, a small show, a night of making.", points: { grailed: 2, depop: 1 } },
-      { text: "A sport — a little competition kicks off the weekend right.", points: { ebay: 2, beni: 1 } },
+      {
+        text: "Staying in to unwind with a show.",
+        points: { vinted: 2, thredup: 1 },
+      },
+      {
+        text: "A bar or a party, to meet new people.",
+        points: { poshmark: 2, depop: 1 },
+      },
+      {
+        text: "Something artsy — a gallery, a small show, a night of making.",
+        points: { grailed: 2, realreal: 1, fbmarketplace: 1 },
+      },
+      {
+        text: "A sport — a little competition kicks off the weekend right.",
+        points: { ebay: 2, beni: 1 },
+      },
     ],
   },
   {
-    id: "seller-trust",
+    id: "trust",
     theme: "fun",
     title: "What makes you trust a seller you've never met?",
     options: [
-      { text: "I trust the platform's authentication system.", points: { vestiaire: 1, realreal: 1 } },
-      { text: "A history of good reviews and ratings is enough for me.", points: { ebay: 2, poshmark: 1 } },
-      { text: "It doesn't matter much to me. Worst case, I contact the platform for a refund.", points: { thredup: 2, vinted: 1 } },
-      { text: "I care about proof of activity on the platform, whether that's reviews from other buyers or messages between me and the seller.", points: { fbmarketplace: 2, ebay: 1 } },
+      {
+        text: "I trust the platform's authentication system.",
+        points: { vestiaire: 1, realreal: 1, grailed: 1 },
+      },
+      {
+        text: "A history of good reviews and ratings is enough for me.",
+        points: { ebay: 2, poshmark: 1 },
+      },
+      {
+        text: "It doesn't matter much to me. Worst case, I contact the platform for a refund.",
+        points: { thredup: 2, vinted: 1 },
+      },
+      {
+        text: "I care about proof of activity on the platform, whether that's reviews from other buyers or messages between me and the seller.",
+        points: { fbmarketplace: 2, beni: 1 },
+      },
     ],
   },
   {
@@ -516,10 +648,22 @@ const QUESTIONS = [
     theme: "fun",
     title: "What describes your favorite closet item?",
     options: [
-      { text: "A high quality piece from a renowned brand.", points: { vestiaire: 2, realreal: 1 } },
-      { text: "A rare vintage piece with a story, which nobody else owns.", points: { poshmark: 2 } },
-      { text: "This season's hottest piece, snagged before it sold out.", points: { depop: 2 } },
-      { text: "Something I've worn for years and gotten attached to.", points: { thredup: 2 } },
+      {
+        text: "A high quality piece from a renowned brand.",
+        points: { vestiaire: 1, realreal: 2, grailed: 1 },
+      },
+      {
+        text: "A rare vintage piece with a story, which nobody else owns.",
+        points: { poshmark: 2, grailed: 1 },
+      },
+      {
+        text: "This season's hottest piece, snagged before it sold out.",
+        points: { depop: 2, beni: 2 },
+      },
+      {
+        text: "Something I've worn for years and gotten attached to.",
+        points: { ebay: 1 },
+      },
     ],
   },
   {
@@ -527,10 +671,22 @@ const QUESTIONS = [
     theme: "fun",
     title: "When forced to choose between multiple options, I am someone who…",
     options: [
-      { text: "Takes time to thoroughly research the options to see which one best suits my needs. The worst thing is to buy something useless to me.", points: { beni: 2 } },
-      { text: "Goes off vibes! If I feel like it, I'll just get it. Life is too short to hesitate. I'll make do with whatever I get.", points: { depop: 2, grailed: 1 } },
-      { text: "Quickly skims the information on the options before making a choice.", points: { poshmark: 2, realreal: 1 } },
-      { text: "Flips a coin. NEVER make me choose between anything.", points: { thredup: 2, fbmarketplace: 1 } },
+      {
+        text: "Takes time to thoroughly research the options to see which one best suits my needs. The worst thing is to buy something useless to me.",
+        points: { beni: 2, ebay: 1 },
+      },
+      {
+        text: "Goes off vibes! If I feel like it, I'll just get it. Life is too short to hesitate. I'll make do with whatever I get.",
+        points: { depop: 2, vinted: 1 },
+      },
+      {
+        text: "Quickly skims the information on the options before making a choice.",
+        points: { poshmark: 2, realreal: 1, beni: 1 },
+      },
+      {
+        text: "Flips a coin. NEVER make me choose between anything.",
+        points: { thredup: 2, fbmarketplace: 1, grailed: 1 },
+      },
     ],
   },
   {
@@ -538,10 +694,22 @@ const QUESTIONS = [
     theme: "fun",
     title: "A friend invites you to a party where you barely know anyone. What are you most likely to do?",
     options: [
-      { text: "I'm confident in this setting and who I am. I go around talking with others and leaving an impression.", points: { depop: 2 } },
-      { text: "I'm comfortable in this setting, but I'd rather stick to my own pace than start conversations with strangers.", points: { realreal: 2 } },
-      { text: "I stick with the people I know and talk with some of their mutuals.", points: { vinted: 2 } },
-      { text: "I look for people who might share similar interests to mine to talk to.", points: { grailed: 2 } },
+      {
+        text: "I'm confident in this setting and who I am. I go around talking with others and leaving an impression.",
+        points: { depop: 2 },
+      },
+      {
+        text: "I'm comfortable in this setting, but I'd rather stick to my own pace than start conversations with strangers.",
+        points: { realreal: 2 },
+      },
+      {
+        text: "I stick with the people I know and talk with some of their mutuals.",
+        points: { vinted: 2 },
+      },
+      {
+        text: "I look for people who might share similar interests to mine to talk to.",
+        points: { grailed: 2 },
+      },
     ],
   },
   {
@@ -549,39 +717,72 @@ const QUESTIONS = [
     theme: "fun",
     title: "A few days before a group trip you planned starts, your flight is cancelled. You…",
     options: [
-      { text: "Immediately compare every rebooking option and pick the best.", points: { beni: 2 } },
-      { text: "Check in with everyone and come up with a plan together.", points: { poshmark: 2 } },
-      { text: "Wait it out. You know there's a possibility prices may drop if you stay patient.", points: { fbmarketplace: 1, ebay: 1 } },
-      { text: "Just buy whatever flight is closest to the originally cancelled flight. Wasting precious energy trying to find better deals isn't worth the risk.", points: { vestiaire: 2 } },
+      {
+        text: "Immediately compare every rebooking option and pick the best.",
+        points: { beni: 2 },
+      },
+      {
+        text: "Check in with everyone and come up with a plan together.",
+        points: { poshmark: 2 },
+      },
+      {
+        text: "Wait it out. You know there's a possibility prices may drop if you stay patient.",
+        points: { fbmarketplace: 2, ebay: 1 },
+      },
+      {
+        text: "Just buy whatever flight is closest to the originally cancelled flight. Wasting precious energy trying to find better deals isn't worth the risk.",
+        points: { vestiaire: 2 },
+      },
     ],
   },
 ];
 
-/* ---- Precompute the maximum points each result type can earn ----
-   (used to normalize scores so every type is equally achievable) */
+
+/* ---- Maximum Achievable Scores ----
+   For each question, find the highest points each platform
+   could receive from any one answer, then add those values.
+   This normalizes scores across platforms.
+   ---------------------------------------------------------------- */
+
 const MAX_POINTS = (() => {
   const max = {};
   Object.keys(RESULTS).forEach((k) => (max[k] = 0));
+
   QUESTIONS.forEach((q) => {
     const best = {};
+
     q.options.forEach((opt) => {
       Object.entries(opt.points).forEach(([k, v]) => {
         best[k] = Math.max(best[k] || 0, v);
       });
     });
-    Object.entries(best).forEach(([k, v]) => (max[k] += v));
+
+    Object.entries(best).forEach(([k, v]) => {
+      max[k] += v;
+    });
   });
+
   return max;
 })();
 
-/* ---- Scoring: returns ranked results by normalized ratio ---- */
+
+/* ---- Scoring ----
+   1. Add points awarded by each selected answer.
+   2. Divide each platform's raw score by its maximum achievable score.
+   3. Rank by normalized score, highest first.
+   4. Break ties using raw score.
+   ---------------------------------------------------------------- */
+
 function scoreQuiz(answers) {
-  // answers: array of chosen option objects
   const raw = {};
   Object.keys(RESULTS).forEach((k) => (raw[k] = 0));
+
   answers.forEach((opt) => {
     if (!opt) return;
-    Object.entries(opt.points).forEach(([k, v]) => (raw[k] += v));
+
+    Object.entries(opt.points).forEach(([k, v]) => {
+      raw[k] += v;
+    });
   });
 
   const ranked = Object.keys(RESULTS)
@@ -595,5 +796,12 @@ function scoreQuiz(answers) {
   return ranked;
 }
 
-/* expose for the browser */
-window.QUIZ = { RESULTS, QUESTIONS, MAX_POINTS, scoreQuiz };
+
+/* ---- Export ---- */
+
+window.QUIZ = {
+  RESULTS,
+  QUESTIONS,
+  MAX_POINTS,
+  scoreQuiz,
+};
