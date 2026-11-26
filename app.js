@@ -90,7 +90,6 @@ const AFFINITY_LABELS = {
     progressBar: document.getElementById("progress-bar"),
     counter: document.getElementById("q-counter"),
     title: document.getElementById("q-title"),
-    note: document.getElementById("q-note"),
     options: document.getElementById("options"),
     questionCard: document.getElementById("question-card"),
     btnBack: document.getElementById("btn-back"),
@@ -148,13 +147,6 @@ const AFFINITY_LABELS = {
     el.counter.textContent = `Question ${state.index + 1} of ${total}`;
     el.progressBar.style.width = `${(state.index / total) * 100}%`;
     el.title.textContent = q.title;
-
-    if (q.note) {
-      el.note.textContent = q.note;
-      el.note.hidden = false;
-    } else {
-      el.note.hidden = true;
-    }
 
     el.options.innerHTML = "";
     q.options.forEach((opt) => {
